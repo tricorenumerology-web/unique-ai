@@ -1,125 +1,118 @@
-✦ Unique Local AI
+# Unique Local AI
+
+> A lightweight, private, offline AI assistant for Android and Termux.
 
 <p align="center">
-  <strong>A lightweight offline AI assistant for Android & Termux.</strong>
-</p><p align="center">
-  Powered by <strong>Qwen2.5-1.5B</strong> + <strong>llama.cpp</strong>
-</p><p align="center">"Platform" (https://img.shields.io/badge/Platform-Android-green)
-"Environment" (https://img.shields.io/badge/Environment-Termux-blue)
-"AI Model" (https://img.shields.io/badge/Model-Qwen2.5--1.5B-purple)
-"Mode" (https://img.shields.io/badge/Mode-Offline-orange)
-"License" (https://img.shields.io/badge/License-MIT-yellow)
+  <strong>Qwen2.5-1.5B</strong> · <strong>llama.cpp</strong> · <strong>Termux</strong>
+</p>
 
-</p>---
+---
 
-Overview
+## Overview
 
-Unique is a lightweight local AI assistant designed to run directly on Android through Termux.
+**Unique Local AI** brings a private AI assistant directly to your Android device.
 
-It uses a quantized Qwen2.5-1.5B-Instruct model with "llama.cpp" as the local inference engine.
+It runs the AI model locally using **Qwen2.5-1.5B-Instruct** and **llama.cpp**, with a clean terminal interface inspired by modern AI coding assistants.
 
-No web interface.
-No cloud API.
+No browser.  
+No cloud API.  
 No subscription.
 
-Once the model is installed, Unique can generate responses locally on your device.
+Once installed, your normal startup command is simply:
+
+```bash
+unique
+```
 
 ---
 
-✨ Features
+## Features
 
-- 🤖 Qwen2.5-1.5B-Instruct
-- ⚡ GGUF Q4_K_M quantization
-- 🔒 Local/offline inference
-- 📱 Designed for Android + Termux
-- 💻 Clean terminal interface
-- 🌊 Streaming AI responses
-- 💬 Conversation memory during a chat
-- 🚀 One-command installation
-- ▶️ One-command startup
-- 🌐 No web UI
-- ☁️ No cloud API required
+- Local AI inference
+- Qwen2.5-1.5B-Instruct
+- Q4_K_M GGUF model
+- llama.cpp backend
+- Android + Termux support
+- Clean terminal interface
+- Streaming AI responses
+- Conversation memory
+- No web UI
+- No cloud AI API required
+- No API key required
+- One-command installation
+- One-command startup
 
 ---
 
-🚀 Quick Start
+# Quick Start
 
-1. Install Unique
+## 1. Install Unique
 
-Open Termux and run:
+Open **Termux** and run:
 
+```bash
 curl -fsSL https://raw.githubusercontent.com/tricorenumerology-web/unique-ai/main/install.sh | bash
-
-The command above installs the required components and launches Unique when installation finishes.
-
-What the installer does
+```
 
 The installer automatically:
 
-1. Checks that you're using Termux
+1. Checks that you are using Termux
 2. Installs required packages
-3. Installs Python and Rich
-4. Downloads/builds "llama.cpp" if necessary
-5. Downloads the Qwen2.5-1.5B Q4_K_M model
-6. Installs the Unique application
-7. Creates the "unique" command
-8. Launches Unique
+3. Installs Python
+4. Installs Rich
+5. Downloads/builds llama.cpp when required
+6. Downloads the Qwen2.5-1.5B model
+7. Installs Unique
+8. Creates the `unique` command
+9. Starts Unique
 
-«First installation may take some time. "llama.cpp" may need to be compiled and the Qwen model is approximately 1 GB.»
+> The first installation may take several minutes because llama.cpp may need to be compiled and the Qwen model is approximately 1 GB.
 
 ---
 
-▶️ Start Unique
+# Start Unique
 
-After installation, start Unique anytime with:
+After installation, simply run:
 
+```bash
 unique
+```
 
-That's all.
+You do not need to manually start `llama-server`.
 
-You do not need to manually start:
+You do not need to manually start Python.
 
-- Python
-- "llama-server"
-- the Qwen model
-- a web browser
+You do not need to open a browser.
 
-Your workflow is simply:
+Your normal workflow is:
 
+```text
 Termux
-  │
-  └── unique
-        │
-        ▼
-   ✦ Unique
-        │
-        ▼
-    Start Chat
-        │
-        ▼
-   Qwen2.5-1.5B
+   │
+   ▼
+unique
+   │
+   ▼
+Unique Local AI
+   │
+   ▼
+Start Chat
+   │
+   ▼
+Qwen2.5-1.5B
+```
 
 ---
 
-💬 Using Unique
+# Interface
 
-After running:
+When Unique starts, it provides a simple terminal interface:
 
-unique
-
-you'll see the Unique terminal interface.
-
-Example:
-
+```text
 ✦ Welcome to Unique
 
-██    ██ ███    ██ ██  ██████ ██    ██ ███████
-██    ██ ████   ██ ██ ██      ██    ██ ██
-██    ██ ██ ██  ██ ██ ██      ██    ██ █████
-██    ██ ██  ██ ██ ██      ██    ██ ██
- ██████  ██   ████ ██  ██████  ██████  ███████
+UNIQUE LOCAL AI
 
-Unique Local AI
 Qwen 2.5 1.5B • Offline
 
 Select an option:
@@ -130,15 +123,23 @@ Select an option:
   4. Exit
 
 ›
+```
 
 Select:
 
+```text
 1
+```
 
-Then start chatting.
+to start chatting.
+
+---
+
+# Chat
 
 Example:
 
+```text
 You › Hello
 
 Unique › Hello! How can I help you today?
@@ -146,83 +147,170 @@ Unique › Hello! How can I help you today?
 You › Write a Python calculator
 
 Unique › Sure. Here's a simple Python calculator...
+```
 
-Responses are streamed while the local model generates them.
+Unique streams the response while the local model generates it.
 
 ---
 
-⌨️ Chat Commands
+# Chat Commands
 
-Inside a Unique chat:
+## New Conversation
 
-New conversation
+Start a new conversation:
 
+```text
 /new
-
-Starts a fresh conversation.
-
-Clear screen
-
-/clear
-
-Clears the terminal screen.
-
-Help
-
-/help
-
-Displays available commands.
-
-Exit chat
-
-/exit
-
-Returns to the Unique main menu.
+```
 
 ---
 
-🧠 Model
+## Clear Screen
+
+Clear the terminal:
+
+```text
+/clear
+```
+
+---
+
+## Help
+
+Show available commands:
+
+```text
+/help
+```
+
+---
+
+## Exit
+
+Exit the current chat:
+
+```text
+/exit
+```
+
+---
+
+# How It Works
+
+```text
+                    UNIQUE
+                       │
+                       ▼
+                 Terminal UI
+                       │
+                       ▼
+                 llama-server
+                       │
+                       ▼
+              Qwen2.5-1.5B
+                       │
+                       ▼
+                Android / Termux
+```
+
+The AI inference engine runs locally on your Android device.
+
+---
+
+# Model
 
 Unique currently uses:
 
+**Model**
+
+```text
 Qwen2.5-1.5B-Instruct
+```
 
-Quantization:
+**Format**
 
-Q4_K_M
-
-Format:
-
+```text
 GGUF
+```
 
-The model is downloaded automatically during installation and is not stored inside this GitHub repository.
+**Quantization**
 
-This keeps the GitHub repository lightweight.
+```text
+Q4_K_M
+```
 
----
+The model is downloaded automatically during installation.
 
-⚙️ Architecture
-
-                ✦ UNIQUE
-                    │
-                    ▼
-              Terminal UI
-                    │
-                    ▼
-              llama-server
-                    │
-                    ▼
-        Qwen2.5-1.5B Q4_K_M
-                    │
-                    ▼
-              Android / Termux
-
-The AI model runs locally on your Android device.
+The model is not stored inside this GitHub repository because of its large file size.
 
 ---
 
-📁 File Structure
+# Privacy
 
+Unique is designed for local AI inference.
+
+Your conversations are processed by the local AI model running on your device.
+
+Unique does not require:
+
+- OpenAI API
+- Claude API
+- Gemini API
+- Cloud AI subscription
+
+No cloud AI account is required for local inference.
+
+> Internet access is required during the initial installation to download the required software and model.
+
+After installation, the AI itself can run locally without a cloud AI service.
+
+---
+
+# Requirements
+
+- Android device
+- Termux
+- Internet connection for initial installation
+- Approximately 2–3 GB of free storage
+- Sufficient RAM for local model inference
+
+Performance depends on your Android device.
+
+---
+
+# Installation Details
+
+Unique creates the following directories:
+
+## Application
+
+```text
+~/UniqueAI/
+```
+
+## Model directory
+
+```text
+~/MyAI/models/
+```
+
+## Qwen model
+
+```text
+~/MyAI/models/Qwen2.5-1.5B-Instruct-Q4_K_M.gguf
+```
+
+## Unique command
+
+```text
+~/.termux/bin/unique
+```
+
+---
+
+# Repository Structure
+
+```text
 unique-ai/
 │
 ├── install.sh
@@ -232,228 +320,378 @@ unique-ai/
 │
 └── config/
     └── system.txt
-
-"install.sh"
-
-One-command installer for Termux.
-
-"unique.py"
-
-Main Unique application and terminal interface.
-
-"config/system.txt"
-
-Default system instructions for Unique.
-
-"LICENSE"
-
-MIT license for the project source code.
+```
 
 ---
 
-💾 Installation Locations
+# Project Files
 
-After installation, Unique uses the following locations:
+## install.sh
 
-Application
+The main installation script.
 
-~/UniqueAI/
-
-Model
-
-~/MyAI/models/
-
-Qwen model
-
-~/MyAI/models/Qwen2.5-1.5B-Instruct-Q4_K_M.gguf
-
-Command
-
-~/.termux/bin/unique
+It installs the required dependencies, prepares llama.cpp, downloads the model, configures the `unique` command, and starts Unique.
 
 ---
 
-🔄 Update Unique
+## unique.py
 
-To install the latest version from this repository, run:
+The main Unique application.
 
-curl -fsSL https://raw.githubusercontent.com/tricorenumerology-web/unique-ai/main/install.sh | bash
+It provides:
 
-If the Qwen model is already downloaded, the installer will reuse the existing model instead of downloading it again.
-
-Then start:
-
-unique
+- Terminal UI
+- Chat interface
+- Model communication
+- Streaming responses
+- Conversation handling
+- Local AI interaction
 
 ---
 
-🛠️ Troubleshooting
+## config/system.txt
 
-"unique: command not found"
+Contains the default system instructions used by Unique.
+
+You can customize this file to change Unique's personality and behavior.
+
+---
+
+## LICENSE
+
+Contains the MIT License for the Unique source code.
+
+Third-party software and AI models may have separate licenses.
+
+---
+
+# Troubleshooting
+
+## `unique: command not found`
 
 Run:
 
+```bash
 source ~/.bashrc
+```
 
 Then:
 
+```bash
 unique
+```
 
-If necessary:
+If the command is still not found:
 
+```bash
 export PATH="$HOME/.termux/bin:$PATH"
+```
 
 Then:
 
+```bash
 unique
+```
 
 ---
 
-Check llama-server
+# Check llama.cpp
 
-Run:
+To check whether llama-server exists:
 
+```bash
 ls ~/llama.cpp/build/bin/llama-server
+```
 
-If the file exists, "llama.cpp" is installed.
+If the file exists, llama.cpp has been installed successfully.
 
 ---
 
-Check the Qwen model
+# Check the Model
 
 Run:
 
+```bash
 ls ~/MyAI/models/
+```
 
 You should see:
 
+```text
 Qwen2.5-1.5B-Instruct-Q4_K_M.gguf
+```
 
 ---
 
-Check available RAM
+# Check Available Memory
 
 Run:
 
+```bash
 free -h
+```
 
-Running a local AI model requires sufficient available memory.
+If the model fails to load, close other Android applications and try again.
 
-If the model fails to load, close other applications and try again.
-
----
-
-📱 Requirements
-
-Minimum
-
-- Android device
-- Termux
-- Internet connection for initial installation
-- Approximately 2–3 GB free storage
-- Sufficient RAM for local inference
-
-Internet requirement
-
-Internet is required for the initial installation to download dependencies, "llama.cpp", and the model.
-
-After everything has been installed, the AI inference itself runs locally.
+Local AI models require RAM while generating responses.
 
 ---
 
-🗺️ Roadmap
+# Update Unique
 
-Unique is still under active development.
+To install the latest version from GitHub, run:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/tricorenumerology-web/unique-ai/main/install.sh | bash
+```
+
+Then start Unique:
+
+```bash
+unique
+```
+
+If the model already exists, the installer can reuse the existing model.
+
+---
+
+# Roadmap
+
+Unique is actively being developed.
 
 Planned features:
 
-- [ ] Persistent chat history
-- [ ] "/history"
-- [ ] "/save"
-- [ ] "/load"
+- [ ] Persistent conversation history
+- [ ] `/history`
+- [ ] `/save`
+- [ ] `/load`
 - [ ] Code Agent mode
-- [ ] Workspace support
+- [ ] Workspace mode
 - [ ] Local file reading
 - [ ] File creation
 - [ ] File editing
-- [ ] Safe terminal command execution
-- [ ] Better Markdown rendering
+- [ ] Safe terminal commands
 - [ ] Code syntax highlighting
+- [ ] Markdown rendering
 - [ ] Model selection
 - [ ] Custom system prompts
-- [ ] "/update"
+- [ ] Automatic updates
 - [ ] Model manager
 - [ ] More lightweight models
 - [ ] Better Android memory optimization
+- [ ] Multiple model support
 
 ---
 
-🔐 Privacy
+# Code Agent
 
-Unique is designed around local inference.
+The planned Code Agent will allow Unique to work with local projects.
 
-Your prompts are sent to the local AI engine running on your device rather than a cloud AI API.
+Example:
 
-Unique does not require an OpenAI, Gemini, Claude, or other cloud API key.
+```text
+You › Inspect this project
 
-«Internet access is only needed during installation/downloads unless you add your own external services.»
+Unique ›
+Scanning project...
+
+✓ Python files found
+✓ Configuration found
+✓ Project structure analyzed
+
+What would you like me to change?
+```
+
+Future versions will support local file operations and safe command execution.
 
 ---
 
-📜 License
+# Local Workspace
 
-This project is licensed under the MIT License.
+Unique is designed to eventually work directly with local projects.
 
-See ""LICENSE"" (LICENSE) for the full license text.
+Example:
 
-The MIT license applies to the Unique source code. Third-party models and dependencies may have their own licenses and terms.
+```text
+~/projects/myapp/
+```
+
+Unique will be able to understand project files and assist with development without sending the project to a cloud AI service.
 
 ---
 
-👨‍💻 Project
+# Security
 
-Unique Local AI
+Unique is designed to run locally.
 
-Developed by TriCore Numerology Web
+Future terminal and file-management features will use confirmation prompts before potentially destructive operations.
+
+For example:
+
+```text
+Unique wants to run:
+
+rm -rf example/
+
+Allow? [y/N]
+```
+
+---
+
+# Performance
+
+Unique uses the Q4_K_M quantized version of Qwen2.5-1.5B to reduce memory requirements.
+
+Performance depends on:
+
+- Device CPU
+- Available RAM
+- Android background processes
+- Context size
+- Number of CPU threads
+- Model configuration
+
+For better performance, close unnecessary applications before starting the model.
+
+---
+
+# Offline Mode
+
+After installation, Unique can operate locally.
+
+The basic architecture is:
+
+```text
+User
+  │
+  ▼
+Unique UI
+  │
+  ▼
+Local llama.cpp
+  │
+  ▼
+Local Qwen Model
+  │
+  ▼
+Response
+```
+
+No cloud AI API is required.
+
+---
+
+# Contributing
+
+Contributions are welcome.
+
+You can contribute by:
+
+- Reporting bugs
+- Suggesting features
+- Improving the UI
+- Improving performance
+- Adding model support
+- Improving Termux compatibility
+- Improving documentation
+- Submitting pull requests
+
+---
+
+# Bug Reports
+
+If Unique does not work correctly, please include:
+
+```bash
+free -h
+```
+
+and:
+
+```bash
+ls ~/MyAI/models/
+```
+
+Also include the error message shown in Termux.
+
+Do not post private information, API keys, passwords, or personal data.
+
+---
+
+# Project
+
+**Unique Local AI**
+
+Developed by:
+
+**TriCore Numerology Web**
 
 GitHub:
 
+```text
 https://github.com/tricorenumerology-web/unique-ai
+```
 
 ---
 
-⭐ Support the Project
+# License
 
-If you find Unique useful:
+Unique Local AI source code is licensed under the MIT License.
 
-- ⭐ Star the repository
-- 🐛 Report bugs
-- 💡 Suggest features
-- 🔧 Contribute improvements
-- 📢 Share the project
+See:
+
+```text
+LICENSE
+```
+
+for the complete license.
+
+Third-party models and dependencies are subject to their respective licenses and terms.
 
 ---
 
-⚡ Quick Commands
+# Quick Reference
 
-Install
+## Install
 
+```bash
 curl -fsSL https://raw.githubusercontent.com/tricorenumerology-web/unique-ai/main/install.sh | bash
+```
 
-Start
+## Start
 
+```bash
 unique
+```
 
-Fix command not found
+## Fix `unique` command
 
+```bash
 source ~/.bashrc
+```
 
-Check RAM
+## Check RAM
 
+```bash
 free -h
+```
+
+## Check Model
+
+```bash
+ls ~/MyAI/models/
+```
+
+## Check llama.cpp
+
+```bash
+ls ~/llama.cpp/build/bin/llama-server
+```
 
 ---
 
-<p align="center">✦ Unique — Private. Local. Yours.
+<p align="center">
+
+<strong>Unique — Private. Local. Yours.</strong>
 
 </p>
